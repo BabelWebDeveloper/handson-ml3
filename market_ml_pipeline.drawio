@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.7">
   <diagram id="MLPipelineFull" name="End-to-End Market ML Pipeline (1-14)">
-    <mxGraphModel dx="8987" dy="6020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="6802" dy="2535" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -15,6 +15,9 @@
         </mxCell>
         <mxCell id="40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="4. Czyszczenie danych&#xa;• Missing values&#xa;• Outlier handling&#xa;• Ujednolicenie stref czasowych&#xa;• Spójność OHLC" vertex="1">
           <mxGeometry height="130" width="320" x="-490" y="-1180" as="geometry" />
+        </mxCell>
+        <mxCell id="f0z2Jv3kyAA33Y-1H8sS-241" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="200">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="5. Feature engineering&#xa;• Returns / log returns&#xa;• Candle anatomy (body/wicks)&#xa;• Volatility (ATR, rolling std)&#xa;• Volume (relative volume)" vertex="1">
           <mxGeometry height="150" width="340" x="-1900" y="-1030" as="geometry" />
@@ -99,6 +102,27 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fb2" edge="1" parent="1" source="110" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;html=1;" target="120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WD2dRAa4dLDvtk7R4Zzs-240" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="830" width="420" x="-2690" y="-890" as="geometry" />
+        </mxCell>
+        <mxCell id="221" parent="WD2dRAa4dLDvtk7R4Zzs-240" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Candle anatomy (expanded)&#xa;           Czym są te cechy i co widzi model:&#xa;&#xa;           • body_norm_rng = |close−open| / (high−low)&#xa;             → Przykład: małe body przy dużym zakresie&#xa;             → Model widzi: niska decyzyjność, dużo walki&#xa;&#xa;           • upper_wick_norm_rng = (high−max(open,close)) / (high−low)&#xa;             → Przykład: długi górny cień&#xa;             → Model widzi: silne odrzucenie wzrostu&#xa;&#xa;           • lower_wick_norm_rng = (min(open,close)−low) / (high−low)&#xa;             → Przykład: długi dolny cień&#xa;             → Model widzi: agresywną obronę dołów&#xa;&#xa;           • direction = sign(close−open)&#xa;             → Przykład: świeca zielona / czerwona&#xa;             → Model widzi: kto wygrał świecę (bez info jak trudno)" vertex="1">
+          <mxGeometry height="260" width="420" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="200" parent="WD2dRAa4dLDvtk7R4Zzs-240" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" value="Feature semantics&#xa;What the model sees (intuicje + przykłady)" vertex="1">
+          <mxGeometry height="70" width="420" as="geometry" />
+        </mxCell>
+        <mxCell id="210" parent="WD2dRAa4dLDvtk7R4Zzs-240" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Log-returns&#xa;Analogia: prędkość auta&#xa;Przykład na świeczkach: 100 → 102 → 104 (spójny ruch w górę)&#xa;Co model widzi: sekwencję małych dodatnich liczb → ciągły ruch w jednym kierunku (kierunek + tempo), bez poziomu ceny." vertex="1">
+          <mxGeometry height="130" width="420" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="230" parent="WD2dRAa4dLDvtk7R4Zzs-240" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Volatility&#xa;Analogia: stan drogi&#xa;Przykład na świeczkach: ta sama świeca w spokojnym vs chaotycznym rynku&#xa;Co model widzi: miarę reżimu (np. ATR_rel / rolling_std_rel) → czy ruch jest duży czy normalny jak na obecne warunki; pomaga ważyć znaczenie innych cech." vertex="1">
+          <mxGeometry height="150" width="420" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="240" parent="WD2dRAa4dLDvtk7R4Zzs-240" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Volume&#xa;Analogia: gaz / moc silnika&#xa;Przykład na świeczkach: ta sama świeca przy niskim vs wysokim volume&#xa;Co model widzi: rel_volume (np. volume / rolling_mean(volume)) → czy ruch był wsparty zaangażowaniem czy był „pusty”; wzmacnia/osłabia interpretację ruchu." vertex="1">
+          <mxGeometry height="150" width="420" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="fs1" edge="1" parent="WD2dRAa4dLDvtk7R4Zzs-240" source="200" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" target="210">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
