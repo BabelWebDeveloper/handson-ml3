@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.7">
   <diagram id="MLPipelineFull" name="End-to-End Market ML Pipeline (1-14)">
-    <mxGraphModel dx="6802" dy="2535" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="5658" dy="1994" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,11 +22,14 @@
         <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="5. Feature engineering&#xa;• Returns / log returns&#xa;• Candle anatomy (body/wicks)&#xa;• Volatility (ATR, rolling std)&#xa;• Volume (relative volume)" vertex="1">
           <mxGeometry height="150" width="340" x="-1900" y="-1030" as="geometry" />
         </mxCell>
+        <mxCell id="WD2dRAa4dLDvtk7R4Zzs-242" edge="1" parent="1" source="60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="WD2dRAa4dLDvtk7R4Zzs-241" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="6. Ponowna walidacja danych&#xa;• NaN / inf po cechach&#xa;• Leakage check (shift/target)&#xa;• Sanity checks cech" vertex="1">
-          <mxGeometry height="150" width="320" x="-1330" y="-1020" as="geometry" />
+          <mxGeometry height="150" width="320" x="-1480" y="-1030" as="geometry" />
         </mxCell>
         <mxCell id="70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="7. Normalizacja i skalowanie&#xa;• StandardScaler / MinMaxScaler&#xa;• Fit tylko na train&#xa;• Zapisywanie transformacji" vertex="1">
-          <mxGeometry height="150" width="320" x="-850" y="-1020" as="geometry" />
+          <mxGeometry height="150" width="320" x="-750" y="-1020" as="geometry" />
         </mxCell>
         <mxCell id="80" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="8. Podział danych (train/val/test)&#xa;• Time-based split&#xa;• Walk-forward (opcjonalnie)&#xa;• Zasady bez przecieku czasu" vertex="1">
           <mxGeometry height="150" width="320" x="-390" y="-1010" as="geometry" />
@@ -62,9 +65,6 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e5" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="60">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="60" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="70">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e7" edge="1" parent="1" source="70" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="80">
@@ -124,6 +124,12 @@
         </mxCell>
         <mxCell id="fs1" edge="1" parent="WD2dRAa4dLDvtk7R4Zzs-240" source="200" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" target="210">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WD2dRAa4dLDvtk7R4Zzs-243" edge="1" parent="1" source="WD2dRAa4dLDvtk7R4Zzs-241" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WD2dRAa4dLDvtk7R4Zzs-241" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="6a. Ponowne czyszczenie danych, jeśli konieczne" vertex="1">
+          <mxGeometry height="150" width="320" x="-1120" y="-1020" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
