@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.1 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.1">
   <diagram id="MLPipelineFull" name="End-to-End Market ML Pipeline (1-14)">
-    <mxGraphModel dx="5248" dy="3451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="5418" dy="3581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,9 +46,6 @@
         </mxCell>
         <mxCell id="80" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;8. Normalizacja i skalowanie&lt;/span&gt;&lt;/div&gt;&lt;div&gt;• StandardScaler / MinMaxScaler&lt;br&gt;• Fit tylko na train&lt;br&gt;• Zapisywanie transformacji&lt;/div&gt;" vertex="1">
           <mxGeometry height="150" width="320" x="-390" y="-1010" as="geometry" />
-        </mxCell>
-        <mxCell id="c-hs5uiOtyiWAVd85sYl-241" edge="1" parent="1" source="90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c-hs5uiOtyiWAVd85sYl-240" value="">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="90" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;" value="9. Budowa modelu&#xa;• Baseline (LR/RF/XGBoost*)&#xa;• Sekwencje (okno N świec)&#xa;• Embedding (CNN/LSTM/AE)&#xa;• Unsupervised (clustering) jako moduł" vertex="1">
           <mxGeometry height="170" width="380" x="-1940" y="-650" as="geometry" />
@@ -162,9 +159,6 @@
         </mxCell>
         <mxCell id="fs1" edge="1" parent="9NS86yXn8nBAM57oJv2T-240" source="200" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" target="210">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c-hs5uiOtyiWAVd85sYl-240" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fontStyle=1;" value="" vertex="1">
-          <mxGeometry height="60" width="120" x="-2190" y="-570" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
