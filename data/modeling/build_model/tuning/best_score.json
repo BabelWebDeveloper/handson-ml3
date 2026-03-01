@@ -1,0 +1,8 @@
+{
+  "task": "classification",
+  "model_kind": "hgb",
+  "refit_metric": "f1",
+  "best_cv_score": 0.6398107743175271,
+  "n_splits": 5,
+  "n_iter": 35
+}

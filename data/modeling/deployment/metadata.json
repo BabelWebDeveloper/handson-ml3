@@ -1,0 +1,17 @@
+{
+  "created_at_utc": "2026-03-01T20:46:01.402235Z",
+  "source_best_model": "data/modeling/build_model/tuning/best_model.joblib",
+  "source_build_spec": "data/modeling/build_model/model_build_spec.json",
+  "source_best_model_sha256": "04b6e318dc53b83762b5748adfa85b2688665c23511589872b5812ab5a2035d2",
+  "required_ohlcv_cols": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "cutoff_date": "1962-03-14",
+  "cutoff_remove": "below",
+  "positive_class_index": 1,
+  "n_feature_cols": 15
+}

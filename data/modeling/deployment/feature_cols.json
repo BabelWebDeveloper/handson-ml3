@@ -1,0 +1,19 @@
+{
+  "feature_cols": [
+    "return",
+    "log_return",
+    "range",
+    "body",
+    "upper_wick",
+    "lower_wick",
+    "lr_1",
+    "candle_body_norm_rng",
+    "candle_upper_wick_norm_rng",
+    "candle_lower_wick_norm_rng",
+    "candle_direction",
+    "vol_atr_14",
+    "vol_ret_std_20",
+    "volm_rel",
+    "volm_log1p_rel"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "split_name": "val",
+  "n_rows": 2408,
+  "columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "y_pred",
+    "y_true",
+    "proba_pos"
+  ],
+  "has_y_true": true,
+  "has_proba_pos": true,
+  "ohlcv_cols": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "csv_path": "data/modeling/build_model/tuning/best_predictions_val.csv"
+}
